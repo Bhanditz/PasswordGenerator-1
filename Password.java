@@ -3,7 +3,7 @@ import java.util.*;
 
 /**
  * @author Bobby Gupta, Andrew Oppenheimer, & Matt Gleason
- * emails: ___________, aoppenh@purdue.edu, gleason2@purdue.edu
+ * emails: gupta298@purdue.edu, aoppenh@purdue.edu, gleason2@purdue.edu
  * @version 9/11/2016
  */
 
