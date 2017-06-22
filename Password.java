@@ -25,8 +25,10 @@ public class Password {
     static Object special;
     static Object ranPass;
 
-    public static boolean checkLength(int num, int length) {
-        if (num > length) {
+
+    // Changed checkLength to detect negative numbers & numbers that exceed the upper limit
+    public static boolean checkLength(int num, int lengthLeft) {
+        if (num > lengthLeft || num < 0 || num > lengthLeft) {
             return false;
         } else {
             return true;
@@ -114,7 +116,6 @@ public class Password {
         do {
             length = 0;
             do {
-
                 do {
                     do {
                         String lengths = JOptionPane.showInputDialog(null, "How long do you want your password to " +
@@ -181,7 +182,7 @@ public class Password {
                                 }
                             }
                         } catch (Exception e) {
-                            JOptionPane.showMessageDialog(null, "Thank you from Bobby Gupta, Andrew Oppenheimer, &" +
+                            JOptionPane.showMessageDialog(null, "Thank you from Bobby Gupta, Andrew Oppenheimer, & " +
                                     "Matt Gleason for trying out our password generator, have a nice day");
                             System.exit(0);
                         }
@@ -213,7 +214,7 @@ public class Password {
                         null, randCheck, randCheck[1]);
             }
 
-            //Ordered Random
+            // Ordered Random
             if (ranPass.equals(JOptionPane.YES_OPTION)) {
                 for (int i = 0; i < numbers; i++) {
                     numCon = numCon + ps.randomNum();
@@ -231,7 +232,7 @@ public class Password {
             int numCount = 0;
             boolean specCount = button;
 
-            //Fully Random
+            // Fully Random
             if (ranPass.equals(JOptionPane.NO_OPTION)) {
                 while (true) {
                     int ran = r.nextInt(5) + 1;
